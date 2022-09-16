@@ -1,8 +1,7 @@
 import { Sequelize } from "sequelize-typescript";
 import { User } from "../src/users/users.model";
-import { Blogger } from "../src/bloggers/bloggers.model";
-
-
+import { Role } from "../src/roles/roles.model";
+import { UserRoles } from "../src/roles/user-roles.model";
 
 export const databaseProviders = [
   {
@@ -16,7 +15,7 @@ export const databaseProviders = [
         password: process.env.POSTGRES_PASSWORD,
         database: process.env.DATABASE_NAME,
       });
-      sequelize.addModels([User, Blogger]);
+      sequelize.addModels([User, Role, UserRoles]);
       try {
         await sequelize.sync()
         console.log('Соединение с БД было успешно установлено')
