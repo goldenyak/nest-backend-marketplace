@@ -31,14 +31,14 @@ export class UsersController {
   @UseGuards(RolesGuard)
   @Get()
   getAllUsers() {
-    return this.usersService.getAllUsers()
+    return this.usersService.getAllUsers();
   }
 
   @ApiOperation({summary: 'Delete user by ID'})
   @ApiResponse({status: 200, description: 'User is deleted'})
   @Delete('/:id')
   deleteUser(@Param('id') id: number) {
-    return this.usersService.deleteUser(id)
+    return this.usersService.deleteUser(id);
   }
 
   @ApiOperation({summary: 'Set role for user'})
