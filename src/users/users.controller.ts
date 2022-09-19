@@ -31,7 +31,7 @@ export class UsersController {
   @UseGuards(RolesGuard)
   @Get()
   getAllUsers() {
-    return this.usersService.getAllUsers();
+    return this.usersService.getAllUsers()
   }
 
   @ApiOperation({summary: 'Delete user by ID'})
